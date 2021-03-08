@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,24 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
+    protected function redirectTo( ) {
+        
+        if (Auth::check() && Auth::user()->role == 'doctor') {
+            return('/doctor');
+        }
+        elseif (Auth::check() && Auth::user()->role == 'patient') {
+            return('/patient');
+        }
+        elseif (Auth::check() && Auth::user()->role == 'plasmadonor') {
+            return('/plasmadonor');
+        }
+        elseif (Auth::check() && Auth::user()->role == 'admin') {
+            return('/admin');
+        }
+     }
+
+
 
     /**
      * Create a new controller instance.
@@ -52,6 +70,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => 'required',
         ]);
     }
 
@@ -67,6 +86,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'role' => $data['role'],
         ]);
     }
 }
