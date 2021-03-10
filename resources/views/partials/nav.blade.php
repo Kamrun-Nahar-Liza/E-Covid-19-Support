@@ -217,7 +217,7 @@
         <li><a href="{{ route('plasmaposts.index')}}"><i class="fa fa-link"></i> <span>Plasma Post</span></a></li>
         
 
-        <li><a href=""><i class="fa fa-link"></i> <span>Doctor List</span></a></li>
+        <li><a href="{{ route('profiles.index')}}"><i class="fa fa-link"></i> <span>Doctor List</span></a></li>
         
         <li><a href="{{ route('countries.index')}}"><i class="fa fa-link"></i> <span>Country List</span></a></li>
         

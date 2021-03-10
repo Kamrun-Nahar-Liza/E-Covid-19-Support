@@ -37,4 +37,4 @@ Route::get('/searchboard', 'PostController@searchboard')->name('searchboard');
 Route::post('/search', 'PostController@search')->name('search');
 
 //doctor_profile
-Route::resource('/profile','ProfileController');
+Route::resource('/profiles','ProfileController');
