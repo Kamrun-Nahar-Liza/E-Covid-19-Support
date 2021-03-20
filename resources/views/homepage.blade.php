@@ -115,91 +115,19 @@
                 
                 <!-- Mobile -->
                 <ul class="menu">
-                    <li class="active dropdown">
-                        <a href="home.html">Home</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="home.html">Home-01</a></li>
-                            <li><a href="home-02.html">Home-02</a></li>
-                            <li><a href="home-03.html">Home-03</a></li>
-                            <li><a href="home-04.html">Home-04</a></li>
-                        </ul>
+                    <li class="active">
+                        <a href="{{ url('/') }}"><b>Home</b></a>
+                        
                     </li>
                     <!-- <li><a href="./about.html">About</a></li> -->
-                    <li class="dropdown">
-                        <a href="#">Service</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="service-01.html">Service-01</a></li>
-                            <li><a href="service-02.html">Service-02</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Pages</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#">Department</a>
-                                <ul class="dropdown-menu left-auto">
-                                    <li><a href="department-01.html">Department-01</a></li>
-                                    <li><a href="department-02.html">Department-02</a> </li>
-                                    <li><a href="department-03.html">Department-03</a> </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Doctor</a>
-                                <ul class="dropdown-menu left-auto">
-                                    <li><a href="doctor-01.html">Doctor-01</a></li>
-                                    <li><a href="doctor-02.html">Doctor-02</a> </li>
-                                </ul>
-                            </li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="coming-soon.html">Coming-Soon</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Blog</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#">Blog-page</a>
-                                <ul class="dropdown-menu left-auto">
-                                    <li><a href="blog-01.html">Blog-01</a></li>
-                                    <li><a href="blog-02.html">Blog-02</a> </li>
-                                    <li><a href="blog-03.html">Blog-03</a></li>
-                                    <li><a href="blog-04.html">Blog-04</a> </li>
-                                    <li><a href="blog-05.html">Blog-05</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Blog-Single</a>
-                                <ul class="dropdown-menu left-auto">
-                                    <li><a href="blog_single-01.html">Blog-Single-01</a></li>
-                                    <li><a href="blog_single-02.html">Blog-Single-02</a> </li>
-                                    <li><a href="blog_single-03.html">Blog-Single-03</a> </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Gallery</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="gallery-01.html">Gallery-01</a></li>
-                            <li><a href="gallery-02.html">Gallery-02</a></li>
-                            <li><a href="gallery-03.html">Gallery-03</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Shop</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="shop-single.html">Shop-Single</a></li>
-                            <li><a href="shop-left-side.html">Shop-left-Side</a></li>
-                            <li><a href="shop-right-side.html">Shop-Right-Side</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    
+                            <li><a href="{{ route('service')}}">Service</a></li>
+                            
+                        
+                            <li><a href="{{ route('doctorlist')}}">Doctors</a></li>
+                            <li><a href="{{ route('donorlist')}}">Plasma Donors</a></li>
+                    
+                    <li><a href="{{ url('/') }}">Contact</a></li>
                 </ul>
 
             </nav>
@@ -538,7 +466,7 @@
                         <div class="section-title text-center mb-3">
                             <h2>Our <span>Gallery</span></h2>
                             <p>
-                                What other sais about clinic.
+                                What other said about website.
                             </p>
                             <div class="section-border">
                                 <div class="icon">
@@ -581,50 +509,8 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6">
                         <div class="item-block-02">
-                            <a data-fancybox="gallery" href="{{asset('HomePage/assets/img/gallery/4.jpg')}}">
-                                <img src="{{asset('HomePage/assets/img/gallery/4.jpg')}}" alt="4">
-                                <div class="overlay">
-                                    <i class="fas fa-camera"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                        <div class="item-block-02">
-                            <a data-fancybox="gallery" href="{{asset('HomePage/assets/img/gallery/5.jpg')}}">
-                                <img src="{{asset('HomePage/assets/img/gallery/5.jpg')}}" alt="5">
-                                <div class="overlay">
-                                    <i class="fas fa-camera"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                        <div class="item-block-02">
-                            <a data-fancybox="gallery" href="{{asset('HomePage/assets/img/gallery/6.jpg')}}">
-                                <img src="{{asset('HomePage/assets/img/gallery/6.jpg')}}" alt="6">
-                                <div class="overlay">
-                                    <i class="fas fa-camera"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                        <div class="item-block-02">
                             <a data-fancybox="gallery" href="{{asset('HomePage/assets/img/gallery/7.jpg')}}">
-                                <img src="{{asset('HomePage/assets/img/gallery/7.jpg')}}" alt="7">
-                                <div class="overlay">
-                                    <i class="fas fa-camera"></i>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6">
-                        <div class="item-block-02">
-                            <a data-fancybox="gallery" href="{{asset('HomePage/assets/img/gallery/8.jpg')}}">
-                                <img src="{{asset('HomePage/assets/img/gallery/8.jpg')}}" alt="8">
+                                <img src="{{asset('HomePage/assets/img/gallery/7.jpg')}}" alt="4">
                                 <div class="overlay">
                                     <i class="fas fa-camera"></i>
                                 </div>
@@ -632,198 +518,59 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
         <!-- GALLERY SECTION END -->
 
-        {{-- <!-- DEPARTMENT SECTION START -->
-
-        <section class="department-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="section-title text-center">
-                            <h2> Our <span>Departments</span></h2>
-                            <p>
-                                Who Is Behind The Best Medical Service In Our Clinic?.
-                            </p>
-                            <div class="section-border">
-                                <div class="icon">
-                                    <i class="fas fa-tint"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="item-block-03 text-left">
-                            <div class="item-content">
-                                <div class="right-side">
-                                    <div class="icon">
-                                        <span class="xicon-brain"></span>
-                                    </div>
-                                    <h5><a href="#">Neurology</a></h5>
-                                </div>
-                                <p>
-                                    Aenean commodo ligula eget dolor. Aenean massa. Cum
-                                    sociis natoque penatibus et
-                                    magnis dis Nullam sit amet nunc felis,
-                                </p>
-                                <div class="item-btn">
-                                    <a href="#" class="solid-btn">read more<i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="item-block-03 text-left">
-                            <div class="item-content">
-                                <div class="right-side">
-                                    <div class="icon">
-                                        <span class="xicon-eye"></span>
-                                    </div>
-                                    <h5><a href="#">Eye Care</a></h5>
-                                </div>
-                                <p>
-                                    Aenean commodo ligula eget dolor. Aenean massa. Cum
-                                    sociis natoque penatibus et
-                                    magnis dis Nullam sit amet nunc felis,
-                                </p>
-                                <div class="item-btn">
-                                    <a href="#" class="solid-btn">read more<i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="item-block-03 text-left">
-                            <div class="item-content">
-                                <div class="right-side">
-                                    <div class="icon">
-                                        <span class="xicon-broken-bone"></span>
-                                    </div>
-                                    <h5><a href="#">Traumatology</a></h5>
-                                </div>
-                                <p>
-                                    Aenean commodo ligula eget dolor. Aenean massa. Cum
-                                    sociis natoque penatibus et
-                                    magnis dis Nullam sit amet nunc felis,
-                                </p>
-                                <div class="item-btn">
-                                    <a href="#" class="solid-btn">read more<i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="item-block-03 text-left">
-                            <div class="item-content">
-                                <div class="right-side">
-                                    <div class="icon">
-                                        <span class="xicon-tooth"></span>
-                                    </div>
-                                    <h5><a href="#">Denteal care</a></h5>
-                                </div>
-                                <p>
-                                    Aenean commodo ligula eget dolor. Aenean massa. Cum
-                                    sociis natoque penatibus et
-                                    magnis dis Nullam sit amet nunc felis,
-                                </p>
-                                <div class="item-btn">
-                                    <a href="#" class="solid-btn">read more<i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="item-block-03 text-left">
-                            <div class="item-content">
-                                <div class="right-side">
-                                    <div class="icon">
-                                        <span class="xicon-kidney"></span>
-                                    </div>
-                                    <h5><a href="#">kidney</a></h5>
-                                </div>
-                                <p>
-                                    Aenean commodo ligula eget dolor. Aenean massa. Cum
-                                    sociis natoque penatibus et
-                                    magnis dis Nullam sit amet nunc felis,
-                                </p>
-                                <div class="item-btn">
-                                    <a href="#" class="solid-btn">read more<i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="item-block-03 text-left">
-                            <div class="item-content">
-                                <div class="right-side">
-                                    <div class="icon">
-                                        <span class="xicon-ears"></span>
-                                    </div>
-                                    <h5><a href="#">Ear Care</a></h5>
-                                </div>
-                                <p>
-                                    Aenean commodo ligula eget dolor. Aenean massa. Cum
-                                    sociis natoque penatibus et
-                                    magnis dis Nullam sit amet nunc felis,
-                                </p>
-                                <div class="item-btn">
-                                    <a href="#" class="solid-btn">read more<i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DEPARTMENT SECTION END --> --}}
+        
 
         <!-- COUNTER SECTION  START-->
 
         <section class="counter-section">
+            
             <div class="container">
+                <h2 style="color: cornsilk; text-align:center"><b>Covid Update</b></h2>
                 <div class="row">
+                    
                     <div class="col-md-3 col-sm-6">
                         <div class="icon-box-item text-center">
                             <div class="icon">
-                                <span class="xicon-tooth icon-2"></span>
+                                <span class="fas fa-user-plus"></span>
                             </div>
-                            <span class="counter">3,236</span>
-                            <h5>Saved Tooth</h5>
+                            <span class="counter">{{ $totalinfect }}</span>
+                            <h5>Total Infect</h5>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="icon-box-item text-center">
                             <div class="icon">
-                                <span class="xicon-kidney icon-2"></span>
+                                <span class="fas fa-chart-pie"></span>
                             </div>
-                            <span class="counter">999</span>
-                            <h5>Saved kidny</h5>
+                            <span class="counter">{{ $totaldeath }}</span>
+                            <h5>Total Death</h5>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="icon-box-item text-center">
                             <div class="icon">
-                                <span class="xicon-child icon-2"></span>
+                                <span class="fas fa-chart-bar"></span>
                             </div>
-                            <span class="counter">2500</span>
-                            <h5>Saved Child</h5>
+                            <span class="counter">{{ $totalcure }}</span>
+                            <h5>Total Cure</h5>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="icon-box-item text-center">
                             <div class="icon">
-                                <span class="xicon-brain icon-2"></span>
+                                <span class="fas fa-user-plus"></span>
                             </div>
-                            <span class="counter">500</span>
-                            <h5>Saved Brain</h5>
+                            <span class="counter">{{ $totaltest }}</span>
+                            <h5>Total Tested</h5>
                         </div>
                     </div>
+                    
                 </div>
             </div>
             </div>

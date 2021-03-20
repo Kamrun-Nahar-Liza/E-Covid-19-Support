@@ -72,9 +72,6 @@
 </div>
 @endsection --}}
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -544,3 +541,4 @@
 
 <!-- Mirrored from demo.themeies.com/html/prolexe/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Feb 2021 10:22:35 GMT -->
 </html>
+

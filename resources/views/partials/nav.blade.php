@@ -207,22 +207,62 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Items</li>
         <!-- Optionally, you can add icons to the links -->
-        
-       <li><a href=""><i class="fa fa-link"></i> <span>Dashboad</span></a></li>
-       
+
+        {{-- Dashboard start --}}
+
+        @if( Auth::user()->role == "doctor")
+       <li><a href="{{ route('doctor')}}"><i class="fa fa-link"></i> <span>Dashboad</span></a></li>
+        @endif
+
+        @if( Auth::user()->role == "patient")
+       <li><a href="{{ route('patient')}}"><i class="fa fa-link"></i> <span>Dashboad</span></a></li>
+       @endif
+
+       @if( Auth::user()->role == "plasmadonor")
+       <li><a href="{{ route('plasmadonor')}}"><i class="fa fa-link"></i> <span>Dashboad</span></a></li>
+       @endif
+
+       @if( Auth::user()->role == "admin")
+       <li><a href="{{ route('admin')}}"><i class="fa fa-link"></i> <span>Dashboad</span></a></li>
+       @endif
+
+       {{-- dashboard end --}}
+
+       <li><a href="{{ route('covid.index')}}"><i class="fa fa-link"></i> <span>Covid Update</span></a></li>
+
+       @if( Auth::user()->role == "doctor")
+       <li><a href="{{ route('doctor_activity')}}"><i class="fa fa-link"></i> <span>My Activities</span></a></li>
+       @endif
+
+       @if( Auth::user()->role == "patient")
+       <li><a href="{{ route('patient_activity')}}"><i class="fa fa-link"></i> <span>My Activities</span></a></li>
+       @endif
+
+       @if( Auth::user()->role == "patient" || Auth::user()->role == "doctor")
         <li><a href="{{ url('/searchboard') }}"><i class="fa fa-link"></i> <span>Search from symptoms</span></a></li>
+        @endif
         
-        <li><a href=""><i class="fa fa-link"></i> <span>My Activities</span></a></li>
-        
+        @if( Auth::user()->role == "patient" || Auth::user()->role == "plasmadonor" || Auth::user()->role == "admin")
         <li><a href="{{ route('plasmaposts.index')}}"><i class="fa fa-link"></i> <span>Plasma Post</span></a></li>
-        
+        @endif
 
         <li><a href="{{ route('profiles.index')}}"><i class="fa fa-link"></i> <span>Doctor List</span></a></li>
         
         <li><a href="{{ route('countries.index')}}"><i class="fa fa-link"></i> <span>Country List</span></a></li>
         
         <li><a href="{{ route('posts.index')}}"><i class="fa fa-link"></i> <span>Recovery Instructions</span></a></li>
-        
+
+        @if( Auth::user()->role == "patient" || Auth::user()->role == "plasmadonor" || Auth::user()->role == "admin")
+        <li><a href="{{ route('plasmaprofiles.index')}}"><i class="fa fa-link"></i> <span>Plasma Donor List</span></a></li>
+        @endif
+
+        @if( Auth::user()->role == "patient")
+        <li><a href="{{ route('plasmarequests.index')}}"><i class="fa fa-link"></i> <span>Send Request List</span></a></li>
+        @endif
+
+        @if( Auth::user()->role == "plasmadonor")
+        <li><a href="{{ route('receive')}}"><i class="fa fa-link"></i> <span>Plasma Request List</span></a></li>
+        @endif
        <!-- <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Sickness Type</span>
             <span class="pull-right-container">

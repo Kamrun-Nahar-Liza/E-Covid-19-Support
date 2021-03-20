@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Country;
 use App\PlasmaPost;
+use App\PlasmaComment;
 use Auth;
+use DB;
 use Validator;
 
 class PlasmaPostController extends Controller
@@ -73,8 +75,15 @@ class PlasmaPostController extends Controller
         $data['plasmapost'] = PlasmaPost::with('country','user')
                                 ->select('id','title', 'content' ,'blood_group','user_id','country_id','created_at')
                                 ->find($id);
+
+                        $comments = DB::table('users')
+                                ->join('plasma_comments', 'users.id', '=', 'plasma_comments.user_id')
+                                ->join('plasma_posts' ,'plasma_comments.plasma_post_id' ,'=', 'plasma_posts.id')
+                                ->select('users.name', 'plasma_comments.*')
+                                ->where(['plasma_posts.id' => $id])
+                                ->get();
         
-        return view('plasmapost.show', $data);
+        return view('plasmapost.show',['comments' => $comments], $data);
     }
 
     
@@ -136,4 +145,35 @@ class PlasmaPostController extends Controller
         session()->flash('type','danger');
         return redirect()->route('plasmaposts.index');
     }
+
+
+    //plasma post comment
+
+    public function comment(Request $request, $plasma_post_id)
+    
+    {
+        $this->validate($request, [
+        'plasma_comment' => 'required'
+          ]);
+
+        $comment = new PlasmaComment;
+        $comment->user_id = Auth::user()->id;
+        $comment->plasma_post_id = $plasma_post_id;
+        $comment->plasma_comment = $request->input('plasma_comment');
+        $comment->save();
+        
+        return redirect()->back()->with('response', 'Comment added successfully');
+
+      }
+  
+      public function delete($id)
+      {
+          $comment = PlasmaComment::find($id);
+          $comment->delete();
+  
+          //redirect
+         return redirect()->back()->with('response', 'Comment added successfully');
+      }
+
+
 }

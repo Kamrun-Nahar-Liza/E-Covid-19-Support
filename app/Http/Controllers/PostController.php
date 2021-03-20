@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Country;
-use App\Post;
 use Auth;
+use App\Post;
 use Validator;
+use App\Comment;
+use App\Country;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -71,8 +73,16 @@ class PostController extends Controller
     {
         $data=[];
         $data['post'] = Post::with('country','user')->select('id','title', 'symptoms' ,'content','user_id','country_id','status','created_at')->find($id);
-        
-        return view('post.show', $data);
+
+        $comments = DB::table('users')
+            ->join('comments', 'users.id', '=', 'comments.user_id')
+            ->join('posts' ,'comments.post_id' ,'=', 'posts.id')
+            ->select('users.name', 'comments.*')
+            ->where(['posts.id' => $id])
+            ->get();
+
+
+            return view('post.show',['comments' => $comments], $data);
     }
 
     
@@ -152,6 +162,32 @@ class PostController extends Controller
         $keyword = $request->input('search');
         $posts = Post::where('symptoms', 'LIKE' , '%'.$keyword.'%')->get();
         return view('search.searchposts' , ['posts' => $posts]);
+      }
+
+      //comment code
+
+      public function comment(Request $request, $post_id){
+
+        $this->validate($request, [
+        'comment' => 'required'
+          ]);
+
+        $comment = new Comment;
+        $comment->user_id = Auth::user()->id;
+        $comment->post_id = $post_id;
+        $comment->comment = $request->input('comment');
+        $comment->save();
+        
+        return redirect()->back()->with('response', 'Comment added successfully');
+      }
+  
+      public function delete($id)
+      {
+          $comment = Comment::find($id);
+          $comment->delete();
+  
+          //redirect
+         return redirect()->back()->with('response', 'Comment added successfully');
       }
   
       

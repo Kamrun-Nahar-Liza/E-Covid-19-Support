@@ -367,6 +367,19 @@
                                 </div>
                             </div>
 
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input id="phone" type="text"  class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="name" autofocus 
+                                         placeholder="Phone" style="border-color: cadetblue">
+
+                                        @error('phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                </div>
+                            </div>
+
                          <div class="col-lg-12 custo-select">
                                 <div class="form-group">
                                     <select id="role"  class="form-control form-select-lg @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required  
