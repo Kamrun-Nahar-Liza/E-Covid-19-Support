@@ -20,6 +20,7 @@ Doctor Profile Lists
                     </div>
                     
                     <div class="col-sm-8 col-9 text-right m-b-20">
+                        @if( Auth::user()->role == "plasmadonor")
                         @php 
                             $plasmaprofile = \App\PlasmaProfile::where('user_id',auth()->id())->exists();
                         @endphp
@@ -29,12 +30,15 @@ Doctor Profile Lists
                             <i class="fa fa-plus"></i> Create
                         </a>
                         @endif
+                        @endif
                     </div>
                     
                 </div>
-            
+                
+
+                
                 <div class="row doctor-grid">
-                         @foreach($plasmaprofiles as $plasmaprofile)
+                    @foreach($plasmaprofiles as $plasmaprofile)    
                     <div class="col-md-4 col-sm-4  col-lg-3">
                         <div class="profile-widget">
                             <div class="doctor-img">
@@ -54,13 +58,17 @@ Doctor Profile Lists
 
 
                         
+                        
+                        @if( Auth::user()->role == "admin")
                         <hr>
-                        <div><a href="{{ route('plasmaprofiles.edit', $plasmaprofile->id)}}" class="btn btn-success">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="padding-left: 30px" >
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                            <a href="{{ route('plasmaprofiles.edit', $plasmaprofile->id)}}" class="btn btn-success">
                             <i class="fa fa-external-link-square">  Edit</i>
-                        </a></div>
+                            </a>
+                        </div>
 
-                        <!--<a href="{{ route('plasmaprofiles.edit', $plasmaprofile->id) }}" class="btn btn-success btn-xs">Edit</a>-->
-                        <hr>
+                        
                         <div class="btn-group mr-2" role="group" aria-label="Second group">
 
                         <form action="{{ route('plasmaprofiles.destroy' , $plasmaprofile->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete?')">
@@ -76,10 +84,12 @@ Doctor Profile Lists
                         
 
                         </div>
+                        @endif
                     </div>
                     
-                @endforeach
+                
                     </div>
+                    @endforeach
 
 				<div class="row">
                     <div class="col-sm-12">

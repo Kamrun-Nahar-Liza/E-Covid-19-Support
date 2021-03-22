@@ -3,12 +3,12 @@
 @section('content')
 
 	<div class="weLl">
-		<h2><b>Plasma Request List</b></h2>
+		<h2><b>Send Request List</b></h2>
 		
 		<p>
-			<a href="{{ route('plasmarequests.create')}}" class="btn btn-success">
+			{{-- <a href="{{ route('plasmarequests.create')}}" class="btn btn-success">
 				<i class="fa fa-plus">  Add Plasma Request</i>
-			</a>
+			</a> --}}
 		</p>
 		
 		
@@ -45,19 +45,19 @@
 					   <!-- Post model relation name category,name can be on uour wish-->
 					<td>{{ $plasmarequest->first_name }} {{ $plasmarequest->last_name }}</td>
 					@if($plasmarequest->status == 0)
-                                   <td> <span class="label label-danger">Pending</span> </td>
-                                  @else
-                                  <td><span class="label label-success">Accepted</span></td>
-                                  @endif
+					<td> <span class="label label-danger">Pending</span> </td>
+					@else
+					<td><span class="label label-success">Accepted</span></td>
+					@endif
 					
 					<td>
 						@if($plasmarequest->status == 0)
-                                    <span class="label label-danger">Waiting for accept</span> 
-                                  @else
-                                  <a href="{{ route('donorinfo', $plasmarequest->id)}}" class="btn btn-info">
-									<i class="fa fa-external-link-square">  Details</i>
-								</a>
-                                  @endif
+						<span class="label label-danger">Waiting for accept</span> 
+						@else
+						<a href="{{ route('donorinfo', $plasmarequest->id)}}" class="btn btn-info">
+						<i class="fa fa-external-link-square">  Details</i>
+						</a>
+						@endif
 												
 					</td>
 					@endif

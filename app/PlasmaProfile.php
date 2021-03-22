@@ -16,4 +16,11 @@ class PlasmaProfile extends Model
     	return $this->belongsTo(User::class , 'user_id');
 
     }
+
+    public function plasmarequest()
+    {
+
+    return $this->hasMany(PlasmaRequest::class,'plasma_profile_id'); 
+    
+    }
 }

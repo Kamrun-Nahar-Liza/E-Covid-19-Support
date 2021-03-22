@@ -53,14 +53,18 @@ Doctor Profile Lists
                         </a></div>
 
 
-                        
+                        @if( Auth::user()->role == "admin")
                         <hr>
-                        <div><a href="{{ route('profiles.edit', $profile->id)}}" class="btn btn-success">
+                        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style="padding-left: 30px" >
+
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+
+                        <a href="{{ route('profiles.edit', $profile->id)}}" class="btn btn-success">
                             <i class="fa fa-external-link-square">  Edit</i>
                         </a></div>
 
-                        <!--<a href="{{ route('profiles.edit', $profile->id) }}" class="btn btn-success btn-xs">Edit</a>-->
-                        <hr>
+
+                        
                         <div class="btn-group mr-2" role="group" aria-label="Second group">
 
                         <form action="{{ route('profiles.destroy' , $profile->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete?')">
@@ -76,10 +80,12 @@ Doctor Profile Lists
                         
 
                         </div>
+                        @endif
                     </div>
                     
-                @endforeach
+                
                     </div>
+                    @endforeach
 
 				<div class="row">
                     <div class="col-sm-12">

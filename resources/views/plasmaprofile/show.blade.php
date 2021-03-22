@@ -136,8 +136,8 @@ Plasma Profile
   
             {{-- Send request start --}}
             
-            
-            <div><a href="{{ route('plasmarequests.show', $data->id)}}" class="btn btn-success">
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group"><a href="{{ route('plasmarequests.show', $data->id)}}" class="btn btn-success">
                 <i class="fa fa-external-link-square">  Send Request</i>
             </a></div>
           
@@ -145,13 +145,12 @@ Plasma Profile
 
             {{-- Send request end --}}
 
-<hr>
 
-
-            <div>
+            <div class="btn-group mr-2" role="group" aria-label="Second group">
                 <a href="{{ route('plasmaprofiles.index')}}" class="btn btn-primary lg">
-                Back to Plasma Donor List
+                Back
             </a>
+            </div>
             </div>
                 
                 </div>

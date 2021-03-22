@@ -70,12 +70,12 @@
   </div>
   
   
-  <button type="submit" class="btn btn-primary">Update</button>
+  <button type="submit" class="btn btn-success">Update</button>
 	</form>
 
   <hr>
   <p>
-      <a href="{{ route('posts.index')}}" class="btn btn-success">
+      <a href="{{ route('posts.index')}}" class="btn btn-primary">
         Back to Post
       </a>
     </p>

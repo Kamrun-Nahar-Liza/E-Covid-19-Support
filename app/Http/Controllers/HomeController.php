@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use DB;
+use App\Post;
 use App\User;
 use App\Covid;
+use App\Country;
 use App\Profile;
+use App\PlasmaPost;
 use App\PlasmaProfile;
 use Illuminate\Http\Request;
 
@@ -130,13 +133,17 @@ class HomeController extends Controller
 
     
     public function doctor_activity()
-    {
-        return view('activity.doctor_activity');
+    {   
+        $data['posts'] = Post::all();
+        $data['countries'] = Country::all();
+        return view('activity.doctor_activity', $data);
     }
 
     public function patient_activity()
     {
-        return view('activity.patient_activity');
+        $data['plasmaposts'] = PlasmaPost::all();
+        $data['countries'] = Country::all();
+        return view('activity.patient_activity',$data);
     }
 
 

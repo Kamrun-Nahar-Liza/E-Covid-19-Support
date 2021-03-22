@@ -139,6 +139,24 @@
         <div class="banner">
             <div class="slider-carousel owl-carousel">
                 
+                
+                
+                <div class="single-slide" style="background-image:url('{{asset('HomePage/assets/img/banner/2.jpg')}}');">
+                    <div class="container">
+                        <div class="slide-caption">
+                            <h1>Protect You<br> & Your Family </h1>
+                            <p>
+                                Patients will get plasma donor from this website. Medical Doctors perform about covid-19 all kinds of symptoms, <br>
+                                according to those symptoms they suggest about recovery instructions <br>to
+                                patients & plasma donor.
+
+                            </p>
+                            <div class="banner-btn">
+                                <a href="{{ url('/register') }}" class="btn btn-secondary-filled">Registration</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="single-slide" style="background-image:url('{{asset('HomePage/assets/img/banner/1.jpg')}}');">
                     <div class="container">
                         <div class="slide-caption">
@@ -159,22 +177,6 @@
                     <div class="container">
                         <div class="slide-caption text-sm-right text-left">
                             <h1>We Care <br> For Your Health </h1>
-                            <p>
-                                Patients will get plasma donor from this website. Medical Doctors perform about covid-19 all kinds of symptoms, <br>
-                                according to those symptoms they suggest about recovery instructions <br>to
-                                patients & plasma donor.
-
-                            </p>
-                            <div class="banner-btn">
-                                <a href="{{ url('/register') }}" class="btn btn-secondary-filled">Registration</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-slide" style="background-image:url('{{asset('HomePage/assets/img/banner/2.jpg')}}');">
-                    <div class="container">
-                        <div class="slide-caption">
-                            <h1>Protect You<br> & Your Family </h1>
                             <p>
                                 Patients will get plasma donor from this website. Medical Doctors perform about covid-19 all kinds of symptoms, <br>
                                 according to those symptoms they suggest about recovery instructions <br>to
@@ -681,9 +683,9 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title testimonial-title text-center mb-3">
-                            <h2><span>Testimonial</span></h2>
+                            <h2><span>Advice About Covid-19</span></h2>
                             <p>
-                                What other said abour Our Clinic.
+                                What other said about covid-19.
                             </p>
                             <div class="section-border">
                                 <div class="icon">
@@ -697,12 +699,11 @@
                                     <div class="client-bg d-sm-flex d-block align-items-center">
                                         <img src="{{asset('HomePage/assets/img/testimonials/1.jpg')}}" alt="">
                                         <div class="client-inform">
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                Exercitati-onem, labore eius blanditiis nesciunt.
+                                            <p>The key point that needs to be emphasised here is that human to human transmission is not rare with these types of viruses."
                                             </p>
                                             <div class="client-name">
-                                                <h6><a href="#">Jonathom Doe</a></h6>
-                                                <span>Outpatient Surgery</span>
+                                                <h6><a href="#">- Dr Clare Wenham</a></h6>
+                                                {{-- <span>Outpatient Surgery</span> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -713,81 +714,20 @@
                                     <div class="client-bg d-sm-flex d-block align-items-center">
                                         <img src="{{asset('HomePage/assets/img/testimonials/2.jpg')}}" alt="">
                                         <div class="client-inform">
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                Exercitati-onem, labore eius blanditiis nesciunt.
+                                            <p>"We also need to remember this is not the only global health emergency occurring now - Ebola continues across DRC, as does a significant Measles outbreak in that country."
                                             </p>
                                             <div class="client-name">
-                                                <h6><a href="#">Jonathan Smith</a></h6>
-                                                <span>Heart Specialist</span>
+                                                <h6><a href="#">- Dr Stephen L. Roberts</a></h6>
+                                                {{-- <span>Heart Specialist</span> --}}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="client text-left">
-                                    <div class="client-bg d-sm-flex d-block align-items-center">
-                                        <img src="{{asset('HomePage/assets/img/testimonials/1.jpg')}}" alt="">
-                                        <div class="client-inform">
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                Exercitati-onem, labore eius blanditiis nesciunt.
-                                            </p>
-                                            <div class="client-name">
-                                                <h6><a href="#">Jonathom Doe</a></h6>
-                                                <span>Outpatient Surgery</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="client text-left">
-                                    <div class="client-bg d-sm-flex d-block align-items-center">
-                                        <img src="{{asset('HomePage/assets/img/testimonials/2.jpg')}}" alt="">
-                                        <div class="client-inform">
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                Exercitati-onem, labore eius blanditiis nesciunt.
-                                            </p>
-                                            <div class="client-name">
-                                                <h6><a href="#">Jonathan Smith</a></h6>
-                                                <span>Heart Specialist</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="client text-left">
-                                    <div class="client-bg d-sm-flex d-block align-items-center">
-                                        <img src="{{asset('HomePage/assets/img/testimonials/1.jpg')}}" alt="">
-                                        <div class="client-inform">
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                Exercitati-onem, labore eius blanditiis nesciunt.
-                                            </p>
-                                            <div class="client-name">
-                                                <h6><a href="#">Jonathom Doe</a></h6>
-                                                <span>Outpatient Surgery</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="client text-left">
-                                    <div class="client-bg d-sm-flex d-block align-items-center">
-                                        <img src="{{asset('HomePage/assets/img/testimonials/2.jpg')}}" alt="">
-                                        <div class="client-inform">
-                                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                Exercitati-onem, labore eius blanditiis nesciunt.
-                                            </p>
-                                            <div class="client-name">
-                                                <h6><a href="#">Jonathan Smith</a></h6>
-                                                <span>Heart Specialist</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
+                            
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -797,103 +737,7 @@
         <!-- TESTIMONIAL SECTION END -->
 
 
-        <!-- NEWS SECTION START -->
-
-        <section class="news-section" style="background-color: rgb(196, 203, 221)">
-            <div class="container">
-                <div class="col-12">
-                    <div class="section-title text-center mb-3">
-                        <h2>Latest <span>News</span></h2>
-                        <p>
-                            Who Is Behind The Best Medical Service In Our Clinic?.
-                        </p>
-                        <div class="section-border">
-                            <div class="icon">
-                                <i class="fas fa-tint"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="item-block-05">
-                            <div class="item-bg">
-                                <img src="{{asset('HomePage/assets/img/news/1.jpg')}}" alt="1">
-                                <span>12 Dec 12</span>
-                            </div>
-                            <div class="item-content text-left">
-                                <div class="meta">
-                                    <a href="#"><i class="ti-calendar"></i> august 10, 2020</a>
-                                    <a href="#" class="ml-4"><i class="ti-comments"></i> 2 Comment</a>
-                                </div>
-                                <h6>
-                                    <a href="#">Give abundantly their likeness to gathered.</a>
-                                </h6>
-                                <p>
-                                    Him make two a blessed creeping won male earth form was appear morning divided on
-                                    dry doesn behold us Day to over winged.
-                                </p>
-                                <div class="item-btn">
-                                    <a href="#" class="btn btn-secondary text-uppercase">Learn
-                                        more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="item-block-05">
-                            <div class="item-bg">
-                                <img src="{{asset('HomePage/assets/img/news/2.jpg')}}" alt="2">
-                                <span>12 Dec 12</span>
-                            </div>
-                            <div class="item-content text-left">
-                                <div class="meta">
-                                    <a href="#"><i class="ti-calendar"></i> august 10, 2020</a>
-                                    <a href="#" class="ml-4"><i class="ti-comments"></i> 2 Comment</a>
-                                </div>
-                                <h6>
-                                    <a href="#">Your Medical Records likeness are Safe.</a>
-                                </h6>
-                                <p>
-                                    Him make two a blessed creeping won male earth form was appear morning divided on
-                                    dry doesn behold us Day to over winged.
-                                </p>
-                                <div class="item-btn">
-                                    <a href="#" class="btn btn-secondary text-uppercase">Learn
-                                        more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="item-block-05">
-                            <div class="item-bg">
-                                <img src="{{asset('HomePage/assets/img/news/3.jpg')}}" alt="2">
-                                <span>12 Dec 12</span>
-                            </div>
-                            <div class="item-content text-left">
-                                <div class="meta">
-                                    <a href="#"><i class="ti-calendar"></i> august 10, 2020</a>
-                                    <a href="#" class="ml-4"><i class="ti-comments"></i> 2 Comment</a>
-                                </div>
-                                <h6>
-                                    <a href="#">Best USA Medical Hospitals and Clinics.</a>
-                                </h6>
-                                <p>
-                                    Him make two a blessed creeping won male earth form was appear morning divided on
-                                    dry doesn behold us Day to over winged.
-                                <div class="item-btn">
-                                    <a href="#" class="btn btn-secondary text-uppercase">Learn
-                                        more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEWS SECTION END -->
+        
 
         
 
@@ -958,32 +802,7 @@
                                 7 Days
                             </p>
                         </div>
-                        {{-- <div class="day-time">
-                            <div class="d-flex justify-content-between mb-3">
-                                Saturday
-                                <a href="#">9.30 - 15.30</a>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                Sunday
-                                <a href="#">9.30 - 15.30</a>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                Monday
-                                <a href="#">9.30 - 15.30</a>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                Tuesday
-                                <a href="#">9.30 - 17.00</a>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                Wednesday
-                                <a href="#">9.30 - 17.00</a>
-                            </div>
-                            <div class="d-flex justify-content-between mb-3">
-                                Thursday
-                                <a href="#">24-Hour Shift</a>
-                            </div>
-                        </div> --}}
+                        
                     </div>
                     <div class="col-lg-3  col-md-6 col-sm-6">
                         <div class="contact-title text-left">

@@ -195,100 +195,38 @@
                     <button class="toggle-bar"><span class="fa fa-bars"></span></button>
                 </div>
                 <div class="header-btn">
+                    @auth
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();" class="btn btn-secondary">Sign out</a>
+ 
+                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                   {{ csrf_field() }}
+                              </form>
+                    @else     
                     <a href="{{ url('/register') }}" class="btn btn-secondary">
                         <i class="fas fa-user-lock"></i><span><b>Registration</b></span></a>
                     <a href="{{ url('/login') }}" class="btn btn-secondary">
                         <i class="fas fa-lock"></i><span><b>Login</b></span></a>
+                    @endauth
+                    
                         
                 </div>
                 
                 <!-- Mobile -->
                 <ul class="menu">
-                    <li class="active dropdown">
-                        <a href="home.html">Home</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="home.html">Home-01</a></li>
-                            <li><a href="home-02.html">Home-02</a></li>
-                            <li><a href="home-03.html">Home-03</a></li>
-                            <li><a href="home-04.html">Home-04</a></li>
-                        </ul>
+                    <li >
+                        <a href="{{ url('/') }}">Home</a>
+                        
                     </li>
                     <!-- <li><a href="./about.html">About</a></li> -->
-                    <li class="dropdown">
-                        <a href="#">Service</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="service-01.html">Service-01</a></li>
-                            <li><a href="service-02.html">Service-02</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Pages</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#">Department</a>
-                                <ul class="dropdown-menu left-auto">
-                                    <li><a href="department-01.html">Department-01</a></li>
-                                    <li><a href="department-02.html">Department-02</a> </li>
-                                    <li><a href="department-03.html">Department-03</a> </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Doctor</a>
-                                <ul class="dropdown-menu left-auto">
-                                    <li><a href="doctor-01.html">Doctor-01</a></li>
-                                    <li><a href="doctor-02.html">Doctor-02</a> </li>
-                                </ul>
-                            </li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="coming-soon.html">Coming-Soon</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Blog</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a href="#">Blog-page</a>
-                                <ul class="dropdown-menu left-auto">
-                                    <li><a href="blog-01.html">Blog-01</a></li>
-                                    <li><a href="blog-02.html">Blog-02</a> </li>
-                                    <li><a href="blog-03.html">Blog-03</a></li>
-                                    <li><a href="blog-04.html">Blog-04</a> </li>
-                                    <li><a href="blog-05.html">Blog-05</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Blog-Single</a>
-                                <ul class="dropdown-menu left-auto">
-                                    <li><a href="blog_single-01.html">Blog-Single-01</a></li>
-                                    <li><a href="blog_single-02.html">Blog-Single-02</a> </li>
-                                    <li><a href="blog_single-03.html">Blog-Single-03</a> </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Gallery</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="gallery-01.html">Gallery-01</a></li>
-                            <li><a href="gallery-02.html">Gallery-02</a></li>
-                            <li><a href="gallery-03.html">Gallery-03</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Shop</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="shop-single.html">Shop-Single</a></li>
-                            <li><a href="shop-left-side.html">Shop-left-Side</a></li>
-                            <li><a href="shop-right-side.html">Shop-Right-Side</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    
+                            <li><a href="{{ route('service')}}">Service</a></li>
+                            
+                        
+                            <li><a href="{{ route('doctorlist')}}">Doctors</a></li>
+                            <li><a href="{{ route('donorlist')}}">Plasma Donors</a></li>
+                    
+                    <li><a href="{{ url('/') }}">Contact</a></li>
                 </ul>
 
             </nav>

@@ -6,9 +6,9 @@
 		<h2><b>Get Request List</b></h2>
 		
 		<p>
-			<a href="{{ route('plasmarequests.create')}}" class="btn btn-success">
+			{{-- <a href="{{ route('plasmarequests.create')}}" class="btn btn-success">
 				<i class="fa fa-plus">  Add Plasma Request</i>
-			</a>
+			</a> --}}
 		</p>
 		
 		
@@ -23,9 +23,10 @@
 			<thead class="thead-dark">
 				<tr >
 				<th>Blood Group</th>
-                <th>Location</th>
+        <th>Location</th>
 				<th>Contact</th>
 				<th>Message</th>
+        <th>Send By</th>
 				<th>Request To</th>
 				<th>Status</th>
 				<th>Action</th>
@@ -33,31 +34,31 @@
 			</thead>
 
 			<tbody>
-
-				@foreach($plasmarequests as $plasmarequest)
-				 @if(Auth::user()->id == $plasmarequest->plasma_profile_id)
-				<tr>
-                    <td>{{ $plasmarequest->blood_group }}</td>
-					<td>{{ $plasmarequest->location }}</td>
-					<td>{{ $plasmarequest->phone }}</td>
-                    <td>{{ $plasmarequest->message }}</td>
-					
-					   <!-- Post model relation name category,name can be on uour wish-->
-					<td>{{ $plasmarequest->first_name }} {{ $plasmarequest->last_name }}</td>
-					@if($plasmarequest->status == 0)
-                                   <td> <span class="label label-danger">Pending</span> </td>
-                                  @else
-                                  <td><span class="label label-success">Accepted</span></td>
-                                  @endif
-					
-					<td>
-						
-                        <button class="btn btn-success btn-xs Accept" data-id="{{$plasmarequest->id}}">Accept</button> 
-                        <button class="btn btn-danger btn-xs  Pending" data-id="{{$plasmarequest->id}}">Pending</button>                             
-												
-					</td>
-					@endif
-				@endforeach
+        @foreach ($user->plasmaprofile as $plasmaprofile)
+            @foreach($plasmaprofile->plasmarequest as $plasmarequest)
+            <tr>
+              <td>{{ $plasmarequest->blood_group }}</td>
+              <td>{{ $plasmarequest->location }}</td>
+              <td>{{ $plasmarequest->phone }}</td>
+              <td>{{ $plasmarequest->message }}</td>
+              <td>{{ $plasmarequest->user->name }}</td>
+              
+                 <!-- Post model relation name category,name can be on uour wish-->
+              <td>{{ $plasmarequest->first_name }} {{ $plasmarequest->last_name }}</td>
+              @if($plasmarequest->status == 0)
+              <td> <span class="label label-danger">Pending</span> </td>
+              @else
+             <td><span class="label label-success">Accepted</span></td>
+              @endif
+              
+              <td>
+                
+                <button class="btn btn-success btn-xs Accept" data-id="{{$plasmarequest->id}}">Accept</button> 
+                <button class="btn btn-danger btn-xs  Pending" data-id="{{$plasmarequest->id}}">Pending</button>                             
+                            
+              </td>
+            @endforeach
+        @endforeach
 			</tbody>
 		</table>
 

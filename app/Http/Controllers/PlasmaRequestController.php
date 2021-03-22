@@ -119,10 +119,10 @@ class PlasmaRequestController extends Controller
 
     public function receive(){
 
-        $data=[];
-        $data['plasmarequests'] = PlasmaRequest::with('user')->select('id','user_id', 'plasma_profile_id', 'blood_group','location','phone','message','first_name','last_name','country','status')->get();
-
-        return view('plasmarequest.receive',$data);
+        $user_id = auth()->id();
+        $user = User::find($user_id);
+        $user = $user->load('plasmaprofile.plasmarequest');
+        return view('plasmarequest.receive',compact('user',$user));
     }
 
 

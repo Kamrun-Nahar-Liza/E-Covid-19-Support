@@ -149,8 +149,8 @@ Plasma Profile
 
 
             <div>
-                <a href="{{ route('plasmaprofiles.index')}}" class="btn btn-primary lg">
-                Back to Plasma Donor List
+                <a href="{{ route('plasmarequests.index')}}" class="btn btn-primary lg">
+                Back
             </a>
             </div>
                 

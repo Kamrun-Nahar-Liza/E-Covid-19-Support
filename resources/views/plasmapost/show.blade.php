@@ -2,9 +2,9 @@
 
 @section('content')
 
-   
+   <h2><b><u>Plasma Post</u><b></h2>
 
-	<h2><b>Title:</b> {{ $plasmapost->title }}</h2>
+	<h3><b>Title:</b> {{ $plasmapost->title }}</h3>
 
 	<p>
 		<b>Blood Group:</b> {{ $plasmapost->blood_group }}
@@ -51,7 +51,7 @@
             <textarea id="Plasma_comment" rows="5" class="form-control" name="plasma_comment" required="autofocus"></textarea>
     
                 <button type="submit" class="btn btn-success">
-                        Comment
+                    <i class="fa fa-commenting"> Comment </i>
                 </button>
          
         </div>
@@ -61,15 +61,16 @@
 
             @if(count($comments) > 0)
                 @foreach($comments as $comment)
-                <p><b> {{ $comment->name}} </b> : '{{ $comment->plasma_comment}}' &nbsp;&nbsp; Commented at: {{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }} </p>
-                                
+                <p><h4><b><u> {{ $comment->name}} : </u></b></h4> <h5><b> '{{ $comment->plasma_comment}}' </b></h5> Commented at: {{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }} </p>
+                
+                
                 @if($comment->user_id ==  Auth::user()->id)
                 <p><div>
                <form action="{{ route('plasmacomment.delete' , $comment->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete?')">
           
                {{ csrf_field() }}
                 <input name="_method" type="hidden" value="DELETE">
-                <button type="submit" class="btn btn-danger ">
+                <button type="submit" class="btn-xs btn-danger ">
                   Delete Comment
                 </button>
     
@@ -90,7 +91,7 @@
     {{-- Comment End --}}
         
 	 
-
+    @if( Auth::user()->role == "admin" || $plasmapost->user_id == Auth::user()->id)
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
     <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -112,6 +113,7 @@
         </form>
     </div>
     </div>
+    @endif
 
 	<hr>
 	<div>

@@ -2,32 +2,32 @@
 
 @section('content')
 
-   
+   <h2><b><u>Recovery Instruction Post</u><b></h2>
 
-	<h2><b>Title:</b> {{ $post->title }}</h2>
+	<h3><b>Title:</b> {{ $post->title }}</h3>
 
-	<p>
+	<h4>
 		<b>Symptoms:</b> {{ $post->symptoms }}
-	</p>
+  </h4>
 
-	<p>
+	<h4>
 		<b>Recovery Instructions:</b> {{ $post->content }}
-    </p>
+  </h4>
 	
-    <p>
-		Status: {{ $post->status == 1 ?'Active' : 'Inactive'}}
-	</p>
+    <h4>
+		<b>Status:</b> {{ $post->status == 1 ?'Active' : 'Inactive'}}
+    </h4>
 
-    <p>
-        Posted By: {{ $post->user->name }}
-    </p>
+    <h4>
+        <b>Posted By:</b> {{ $post->user->name }}
+    </h4>
 
-    <p>
-       Country: {{ $post->country->name }}
-    </p>
+    <h4>
+       <b>Country:</b> {{ $post->country->name }}
+    </h4>
 
 	<p>
-		Posted at: {{ $post->created_at->diffforHumans() }}  
+		<b>Posted at:</b> {{ $post->created_at->diffforHumans() }}  
     </p>    
 
     {{-- Comment Start --}}
@@ -46,7 +46,7 @@
                     <textarea id="Comment" rows="5" class="form-control" name="comment" required="autofocus"></textarea>
     
                     <button type="submit" class="btn btn-success">
-                            Comment
+                            <i class="fa fa-commenting">  Comment</i>
                     </button>
          
                     </div>
@@ -54,7 +54,7 @@
                          <h3><b>  Comments</b></h3>
                          @if(count($comments) > 0)
                                 @foreach($comments as $comment)
-                                <p><b> {{ $comment->name}} </b> : '{{ $comment->comment}}' &nbsp;&nbsp; Commented at: {{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }} </p>
+                                <p><h4><b><u> {{ $comment->name}}  : </u></b></h4> <h5><b>'{{ $comment->comment}}'</b></h5>Commented at: {{ \Carbon\Carbon::parse($comment->created_at)->diffForHumans() }} </p>
                                 
                                    @if($comment->user_id ==  Auth::user()->id)
                                 <p><div>
@@ -62,8 +62,8 @@
           
           {{ csrf_field() }}
                 <input name="_method" type="hidden" value="DELETE">
-                <button type="submit" class="btn btn-danger ">
-                  Delete Comment
+                <button type="submit" class="btn-xs btn-danger ">
+                  <i class="fa fa-trash"> Delete Comment</i>
                 </button>
     
         </form>
@@ -82,7 +82,7 @@
     {{-- Comment End --}}
         
 	 
-
+    @if( Auth::user()->role == "admin" || $post->user_id == Auth::user()->id)
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
     <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -104,6 +104,7 @@
         </form>
     </div>
     </div>
+    @endif
 
 	<hr>
 	<div>

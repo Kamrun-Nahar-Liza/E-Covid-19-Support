@@ -39,7 +39,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             color: black;
           }
           .content-wrapper{
-            background-color: #9cb9c7;
+            background-color: #e0cddf;
           }
         </style>
 

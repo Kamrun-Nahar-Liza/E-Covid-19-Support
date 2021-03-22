@@ -8,6 +8,13 @@ class PlasmaRequest extends Model
 {
     protected $guarded = [];
 
+    public function plasmaprofile()
+    {
+
+    return $this->belongsTo(PlasmaProfile::class,'plasma_profile_id'); 
+    
+    }
+
     public function user()
     {
 

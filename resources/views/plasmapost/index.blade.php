@@ -6,9 +6,11 @@
 		<h2><b>Plasma Post List</b></h2>
 		
 		<p>
+			@if( Auth::user()->role == "patient")
 			<a href="{{ route('plasmaposts.create')}}" class="btn btn-success">
 				<i class="fa fa-plus">  Add Plasma Post</i>
 			</a>
+			@endif
 		</p>
 		
 		

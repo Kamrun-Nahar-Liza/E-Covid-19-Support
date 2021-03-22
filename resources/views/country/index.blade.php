@@ -6,10 +6,12 @@
 		<h2><b>Country List</b></h2>
 		
 		<p>
+			@if( Auth::user()->role == "admin" || Auth::user()->role == "doctor")
 			<a href="{{ route('countries.create')}}" class="btn btn-success">
-				Add Country 
+				<i  class="fa fa-plus">Add Country </i>
 			</a>
 			<marquee>(**Add if it is not avilable in this list**)</marquee>
+			@endif
 		</p>
 		
 

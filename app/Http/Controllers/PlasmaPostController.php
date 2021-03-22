@@ -18,6 +18,7 @@ class PlasmaPostController extends Controller
         $data=[];
         $data['plasmaposts'] = PlasmaPost::with('country','user')
                                 ->select('id','title', 'content' ,'blood_group','user_id','country_id')
+                                ->latest()
                                 ->get();
 
         return view('plasmapost.index', $data);
