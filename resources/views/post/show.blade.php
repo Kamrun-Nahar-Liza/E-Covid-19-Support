@@ -30,6 +30,20 @@
 		<b>Posted at:</b> {{ $post->created_at->diffforHumans() }}  
     </p>    
 
+    
+    <ul class="nav nav-pills">
+    <li role="presentation">
+      <a href='{{ url("/like/{$post->id}") }}'>
+          <span class="fa fa-thumbs-up"> Like({{ $likeCtr }})</span>
+      </a>
+      </li>
+  <li role="presentation">
+      <a href='{{ url("/dislike/{$post->id}")}}'>
+          <span class="fa fa-thumbs-down"> Dislike({{ $dislikeCtr }})</span>
+      </a>
+      </li>
+    </ul>
+
     {{-- Comment Start --}}
 
     <p>

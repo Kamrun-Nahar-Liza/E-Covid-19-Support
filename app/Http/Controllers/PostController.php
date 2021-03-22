@@ -7,6 +7,8 @@ use App\Post;
 use Validator;
 use App\Comment;
 use App\Country;
+use App\Like;
+use App\Dislike;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -73,6 +75,18 @@ class PostController extends Controller
     {
         $data=[];
         $data['post'] = Post::with('country','user')->select('id','title', 'symptoms' ,'content','user_id','country_id','status','created_at')->find($id);
+        
+        
+    //   $post = Post::with('country','user')->where('id', '=', $post_id)->get();
+    //   $likePost= Post::find($post_id);
+    //   $likeCtr  = Like::where(['post_id' => $likePost->id])->count();
+    //   $dislikeCtr  = DisLike::where(['post_id' => $likePost->id])->count();
+
+        $likePost= Post::find($id);
+        $likeCtr  = Like::where(['post_id' => $likePost->id])->count();
+        $dislikeCtr  = DisLike::where(['post_id' => $likePost->id])->count();
+
+      
 
         $comments = DB::table('users')
             ->join('comments', 'users.id', '=', 'comments.user_id')
@@ -82,7 +96,7 @@ class PostController extends Controller
             ->get();
 
 
-            return view('post.show',['comments' => $comments], $data);
+            return view('post.show',['comments' => $comments , 'likePost' => 'likePost', 'likeCtr' => $likeCtr ,'dislikeCtr' => $dislikeCtr], $data);
     }
 
     
@@ -188,6 +202,51 @@ class PostController extends Controller
   
           //redirect
          return redirect()->back()->with('response', 'Comment added successfully');
+      }
+
+
+      //Like
+
+      public function like($id){
+        $loggedin_user = Auth::user()->id;
+        $like_user = Like::where(['user_id' => $loggedin_user , 'post_id' => $id])->first();
+          if(empty($like_user->user_id)){
+            $user_id = Auth::user()->id;
+            $email = Auth::user()->email;
+            $post_id = $id;
+            $like = new Like;
+            $like->user_id= $user_id;
+            $like->email= $email;
+            $like->post_id= $post_id;
+            $like->save();
+            return redirect("/posts/{$id}");
+          }
+  
+          else{
+            return redirect("/posts/{$id}");
+          }
+      }
+
+      //dislike
+
+      public function dislike($id){
+        $loggedin_user = Auth::user()->id;
+        $like_user = Dislike::where(['user_id' => $loggedin_user , 'post_id' => $id])->first();
+          if(empty($like_user->user_id)){
+            $user_id = Auth::user()->id;
+            $email = Auth::user()->email;
+            $post_id = $id;
+            $like = new Dislike;
+            $like->user_id= $user_id;
+            $like->email= $email;
+            $like->post_id= $post_id;
+            $like->save();
+            return redirect("/posts/{$id}");
+          }
+  
+          else{
+            return redirect("/posts/{$id}");
+          }
       }
   
       

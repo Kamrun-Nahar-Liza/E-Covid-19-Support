@@ -89,5 +89,11 @@ Route::get('/doctor_activity','HomeController@doctor_activity')->name('doctor_ac
 //Patient Activity
 Route::get('/patient_activity','HomeController@patient_activity')->name('patient_activity');
 
+//Like
+Route::get('/like/{id}', 'PostController@like');
+
+//Dislike
+Route::get('/dislike/{id}', 'PostController@dislike');
+
 
 
