@@ -99,17 +99,80 @@ class HomeController extends Controller
 
      public function patientindex()
     {
-        return view('patient');
+        $data = DB::table('covids')
+                        ->select('*')
+                        ->orderBy('id','desc')
+                        ->limit(1)
+                        ->get();
+       
+        // (select infect from covids ORDER BY id DESC LIMIT 1);
+
+        $totalinfect = DB::table('covids')
+                ->sum('infect');
+                // ->get();
+
+        $totaldeath = DB::table('covids')
+                ->sum('death');
+
+        $totalcure = DB::table('covids')
+        ->sum('cure');
+
+        $totaltest = DB::table('covids')
+                ->sum('test');
+                
+        return view('patient', compact('data', 'totalinfect','totaldeath','totalcure','totaltest'));
     }
 
     public function plasmadonorindex()
     {   
-        return view('plasmadonor');
+        $data = DB::table('covids')
+                        ->select('*')
+                        ->orderBy('id','desc')
+                        ->limit(1)
+                        ->get();
+       
+        // (select infect from covids ORDER BY id DESC LIMIT 1);
+
+        $totalinfect = DB::table('covids')
+                ->sum('infect');
+                // ->get();
+
+        $totaldeath = DB::table('covids')
+                ->sum('death');
+
+        $totalcure = DB::table('covids')
+        ->sum('cure');
+
+        $totaltest = DB::table('covids')
+                ->sum('test');
+
+        return view('plasmadonor', compact('data', 'totalinfect','totaldeath','totalcure','totaltest'));
     }
 
     public function adminindex()
     {
-        return view('admin');
+        $data = DB::table('covids')
+                        ->select('*')
+                        ->orderBy('id','desc')
+                        ->limit(1)
+                        ->get();
+       
+        // (select infect from covids ORDER BY id DESC LIMIT 1);
+
+        $totalinfect = DB::table('covids')
+                ->sum('infect');
+                // ->get();
+
+        $totaldeath = DB::table('covids')
+                ->sum('death');
+
+        $totalcure = DB::table('covids')
+        ->sum('cure');
+
+        $totaltest = DB::table('covids')
+                ->sum('test');
+
+        return view('admin', compact('data', 'totalinfect','totaldeath','totalcure','totaltest'));
     }
 
     public function service()

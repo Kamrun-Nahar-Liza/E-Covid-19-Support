@@ -22,7 +22,13 @@ Plasma Profile
                             <div class="profile-view">
                                 <div class="profile-img-wrap">
                                     <div class="profile-img">
-                                        <a href="#"><img class="avatar" src="{{ asset('uploads/plasmadonor/' . $data->profile_pic) }}" alt=""></a>
+                                        {{-- <a href="#"><img class="avatar" src="{{ asset('uploads/plasmadonor/' . $data->profile_pic) }}" alt=""></a> --}}
+
+                                        @empty(! $data->profile_pic) 
+                                        <a class="avatar" href=""><img src="{{ asset('uploads/plasmadonor/' . $data->profile_pic) }}" alt=""></a>
+                                        @else
+                                        <a class="avatar" href=""><img src="{{ asset('Avatar Image/avatar.png') }}" alt=""></a>
+                                        @endempty 
 
                                     </div>
                                 </div>

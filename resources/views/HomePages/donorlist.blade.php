@@ -162,7 +162,14 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="item-block-07">
                             <div class="item-pic">
-                                <img src="{{ asset('uploads/plasmadonor/' . $profile->profile_pic) }}" alt="team">
+                                {{-- <img src="{{ asset('uploads/plasmadonor/' . $profile->profile_pic) }}" alt="team"> --}}
+
+                                @empty(! $profile->profile_pic) 
+                                        <a class="avatar" href=""><img src="{{ asset('uploads/plasmadonor/' . $profile->profile_pic) }}" alt=""></a>
+                                        @else
+                                        <a class="avatar" href=""><img src="{{ asset('Avatar Image/avatar.png') }}" alt=""></a>
+                                        @endempty
+
                                 <div class="item-overlay">
                                     <div class="icon">
                                         <a href="#"> <i class="fab fa-facebook-f"></i></a>

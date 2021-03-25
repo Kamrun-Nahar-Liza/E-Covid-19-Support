@@ -11,7 +11,7 @@
   </h4>
 
 	<h4>
-		<b>Recovery Instructions:</b> {{ $post->content }}
+		<b>Recovery Instructions:</b> {!! htmlspecialchars_decode($post->content) !!}
   </h4>
 	
     <h4>

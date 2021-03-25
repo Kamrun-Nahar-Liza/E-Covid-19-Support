@@ -85,7 +85,8 @@ class PlasmaProfileController extends Controller
     
     public function edit($id)
     {
-        //
+        $plasmaprofile = PlasmaProfile::find($id);
+        return view('plasmaprofile.edit', compact('plasmaprofile'));
     }
 
     /**
@@ -97,7 +98,39 @@ class PlasmaProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'blood_group' => 'required',
+            'area' => 'required',
+            // 'address' => 'required',
+            'phone' => 'required',
+            'country' => 'required'
+
+        ]);
+
+        $plasmaprofile = PlasmaProfile::find($id);
+        $plasmaprofile->first_name = $request->get('first_name');
+        $plasmaprofile->last_name = $request->input('last_name');
+        $plasmaprofile->blood_group = $request->input('blood_group');
+        $plasmaprofile->area = $request->input('area');
+        $plasmaprofile->address = $request->input('address');
+        $plasmaprofile->phone = $request->input('phone');
+        $plasmaprofile->country = $request->input('country');
+
+        $plasmaprofile->user_id = auth()->user()->id;
+        if($request->hasfile('profile_pic')) {
+            $file = $request->file('profile_pic');
+            $extension = $file->getClientOriginalName(); //getting image extension
+            $filename =$extension;
+            $file->move('uploads/doctor/', $filename);
+            $plasmaprofile->profile_pic = $filename;
+
+        }           
+        $plasmaprofile->save();
+
+        return redirect('/plasmaprofiles');
     }
 
     /**
@@ -108,10 +141,14 @@ class PlasmaProfileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $plasmaprofile = PlasmaProfile::find($id);
+        $plasmaprofile->delete();
+
+        //redirect
+        return redirect()->route('plasmaprofiles.index');
     }
 
-
+    // view detail info of donor for patient
 
     public function donorinfo($id)
     {

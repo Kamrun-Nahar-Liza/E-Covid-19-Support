@@ -52,9 +52,11 @@
               @endif
               
               <td>
-                
-                <button class="btn btn-success btn-xs Accept" data-id="{{$plasmarequest->id}}">Accept</button> 
+                @if($plasmarequest->status == 0)
+                <button class="btn btn-success btn-xs Accept" data-id="{{$plasmarequest->id}}">Accept</button>
+                @else
                 <button class="btn btn-danger btn-xs  Pending" data-id="{{$plasmarequest->id}}">Pending</button>                             
+                 @endif
                             
               </td>
             @endforeach

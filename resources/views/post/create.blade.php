@@ -1,5 +1,9 @@
 @extends('master')
+@push('style')
+    <!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
+@endpush
 @section('content')
 	<h2><b>Add Recovery Post</b></h2>
 
@@ -54,7 +58,7 @@
 
    <div class="form-group">
     <label for="content">Recovery Instructions</label>
-    <textarea class="form-control" name="content"   placeholder="Enter post content ">{{ old('content')}}</textarea>  
+    <textarea class="form-control summernote" name="content"  placeholder="Enter post content ">{{ old('content')}}</textarea>  
     </div>
 
 
@@ -79,3 +83,16 @@
     </p>
 
 @endsection
+
+@push('script')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.summernote').summernote({
+      placeholder: 'Enter Recovery Instructions',
+      tabsize: 2,
+      height: 200
+    });
+  });
+</script>
+@endpush

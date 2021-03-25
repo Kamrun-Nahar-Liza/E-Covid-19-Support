@@ -109,6 +109,8 @@
                     <a href="{{ url('/login') }}" class="btn btn-secondary">
                         <i class="fas fa-lock"></i><span><b>Login</b></span></a>
                     @endauth
+
+
                     
                         
                 </div>
@@ -582,7 +584,7 @@
 
         <!-- DOCTOR SECTION START -->
 
-        <section class=" doctor-section" style="background-color: rgb(196, 203, 221)">
+        {{-- <section class=" doctor-section" style="background-color: rgb(196, 203, 221)">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -670,7 +672,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
 
         <!-- DOCTOR SECTION END -->

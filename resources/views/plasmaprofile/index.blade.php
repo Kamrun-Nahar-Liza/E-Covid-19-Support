@@ -42,7 +42,14 @@ Doctor Profile Lists
                     <div class="col-md-4 col-sm-4  col-lg-3">
                         <div class="profile-widget">
                             <div class="doctor-img">
+
+                                @empty(! $plasmaprofile->profile_pic) 
                                 <a class="avatar" href="profile.html"><img src="{{ asset('uploads/plasmadonor/' . $plasmaprofile->profile_pic) }}" alt=""></a>
+                                @else
+                                <a class="avatar" href="profile.html"><img src="{{asset('Avatar Image/avatar.png')}}" alt=""></a>
+                                @endempty 
+
+                                {{-- <a class="avatar" href="profile.html"><img src="{{ asset('uploads/plasmadonor/' . $plasmaprofile->profile_pic) }}" alt=""></a> --}}
                             </div>
 
                             <h4 class="doctor-name text-ellipsis"><a href="">{{ $plasmaprofile->first_name }}{{ $plasmaprofile->last_name }}</a></h4>

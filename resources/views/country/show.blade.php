@@ -12,7 +12,7 @@
 		Created At: {{ $country->created_at->diffforHumans() }}
 	</p>
 
-	@if( Auth::user()->role == "admin" || Auth::user()->role == "doctor")
+	@if( Auth::user()->role == "admin")
 
 	<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
 
