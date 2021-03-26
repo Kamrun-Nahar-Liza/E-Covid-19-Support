@@ -232,7 +232,12 @@
        <li><a href="{{ route('covid.index')}}"><i class="fa fa-plus-square"></i> <span>Covid Update</span></a></li>
         @endif
 
-       @if( Auth::user()->role == "doctor")
+
+        @if( Auth::user()->role == "admin")
+       <li><a href="{{ route('verify_doctor')}}"><i class="fa fa-plus-square"></i> <span>Verify Doctor</span></a></li>
+        @endif
+
+       @if( Auth::user()->role == "doctor" && Auth::user()->is_doctor == "1")
        <li><a href="{{ route('doctor_activity')}}"><i class="fa fa-list-alt"></i> <span>My Activities</span></a></li>
        @endif
 

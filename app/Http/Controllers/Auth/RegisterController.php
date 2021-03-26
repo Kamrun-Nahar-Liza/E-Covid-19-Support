@@ -72,6 +72,8 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => 'required',
             'phone' => 'required',
+            'country' => 'required',
+            
         ]);
     }
 
@@ -89,6 +91,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'role' => $data['role'],
             'phone' => $data['phone'],
+            'country' => $data['country'],
+            'code' => $data['code'],
+            
         ]);
     }
 }

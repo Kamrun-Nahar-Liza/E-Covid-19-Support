@@ -318,6 +318,19 @@
                                 </div>
                             </div>
 
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input id="country" type="text"  class="form-control @error('country') is-invalid @enderror" name="country" value="{{ old('country') }}" required autocomplete="name" autofocus 
+                                         placeholder="Country" style="border-color: cadetblue">
+
+                                        @error('country')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                </div>
+                            </div>
+
                          <div class="col-lg-12 custo-select">
                                 <div class="form-group">
                                     <select id="role"  class="form-control form-select-lg @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required  
@@ -335,7 +348,21 @@
                                         @enderror
                                     </select>
                                 </div>
-                            </div>   
+                            </div>  
+                            
+                            
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input id="code" type="text"  class="form-control @error('code') is-invalid @enderror" name="code" value="{{ old('code') }}"  autocomplete="name" autofocus 
+                                         placeholder="Registered Doctor Code" style="border-color: cadetblue">
+
+                                        @error('code')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                </div>
+                            </div>
                       
 
 

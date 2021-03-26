@@ -6,7 +6,7 @@
 		<h2><b>Recovery Instructions List</b></h2>
 		
 		<p>
-			@if( Auth::user()->role == "doctor")
+			@if( Auth::user()->role == "doctor" && Auth::user()->is_doctor == "1")
 			<a href="{{ route('posts.create')}}" class="btn btn-success">
 				<i class="fa fa-plus">  Add Recovery Instructions Post</i>
 			</a>

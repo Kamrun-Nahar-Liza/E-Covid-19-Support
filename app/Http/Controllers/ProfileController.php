@@ -13,7 +13,7 @@ class ProfileController extends Controller
     public function index()
     {
         $data=[];
-        $data['profiles'] = Profile::select('id','profile_pic', 'first_name', 'last_name','department','designation','phone','country')->get();
+        $data['profiles'] = Profile::with('user')->select('id','profile_pic', 'first_name', 'last_name','department','designation','user_id')->get();
 
         return view('profile.index',$data);
     }
@@ -34,9 +34,8 @@ class ProfileController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'department' => 'required',
-            'designation' => 'required',
-            'phone' => 'required',
-            'country' => 'required'
+            'designation' => 'required'
+            
    
         ];
 
@@ -52,8 +51,7 @@ class ProfileController extends Controller
         $profile->first_name = $request->input('first_name');
         $profile->last_name = $request->input('last_name');
         $profile->department = $request->input('department');
-        $profile->phone = $request->input('phone');
-        $profile->country = $request->input('country');
+        
         $profile->designation = $request->input('designation');  
         $profile->user_id = auth()->user()->id; 
               
@@ -94,9 +92,8 @@ class ProfileController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'department' => 'required',
-            'designation' => 'required',
-            'phone' => 'required',
-            'country' => 'required'
+            'designation' => 'required'
+            
 
         ]);
 
@@ -105,8 +102,7 @@ class ProfileController extends Controller
         $profile->last_name = $request->input('last_name');
         $profile->department = $request->input('department');
         $profile->designation = $request->input('designation');
-        $profile->phone = $request->input('phone');
-        $profile->country = $request->input('country');
+        
 
         $profile->user_id = auth()->user()->id;
         if($request->hasfile('profile_pic')) {

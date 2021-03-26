@@ -21,8 +21,6 @@ class CreateProfilesTable extends Migration
             $table->string('last_name');
             $table->string('department');
             $table->string('designation');
-            $table->string('phone');
-            $table->string('country');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

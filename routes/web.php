@@ -80,6 +80,17 @@ Route::get('/receive', 'PlasmaRequestController@receive')->name('receive');
 Route::post('/panel/users/accept', 'PlasmaRequestController@Accept');
 Route::post('/panel/users/pending', 'PlasmaRequestController@Pending');
 
+
+//doctor_accept
+Route::post('/panel/doctors/accept', 'HomeController@Accept');
+Route::post('/panel/doctors/pending', 'HomeController@Pending');
+
+//verify_doctor
+Route::get('/verify_doctor', 'HomeController@verify')->name('verify_doctor');
+//destroy_doctor
+Route::delete('/doctor/{id}', 'HomeController@doctor_delete')->name('user.delete');
+
+
 //covid_update
 Route::resource('/covid','CovidController');
 

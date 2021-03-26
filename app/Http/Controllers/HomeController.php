@@ -172,6 +172,8 @@ class HomeController extends Controller
         $totaltest = DB::table('covids')
                 ->sum('test');
 
+                
+
         return view('admin', compact('data', 'totalinfect','totaldeath','totalcure','totaltest'));
     }
 
@@ -209,5 +211,47 @@ class HomeController extends Controller
         return view('activity.patient_activity',$data);
     }
 
+
+
+//     Doctor Verification
+
+        public function Accept(Request $request)
+        {
+        $id = $request->id;
+        $user = User::find($id);
+        $user->is_doctor = '1';
+        $user->save();
+        }
+
+        public function Pending(Request $request)
+        {
+        $id = $request->id;
+        $user = User::find($id);
+        $user->is_doctor = '0';
+        $user->save();
+        }
+
+//verify list
+
+        public function verify(){
+
+        $newdata = DB::table('users')
+        ->select('*')
+        ->where('role', '=' ,'doctor')
+        
+        ->get();
+
+        return view('activity.verify_doctor', compact('newdata'));
+
+        }
+
+//doctor_delete
+        public function doctor_delete($id){
+                $user = User::find($id);
+               $user->delete();
+
+        //redirect
+        return view('activity.verify_doctor');
+        }
 
 }

@@ -76,12 +76,7 @@ Doctor Profile
                                                 <input type="text" class="form-control floating" name="department"  value="{{ $profile->department }}">
                                             </div>
                                         </div>
-                                         <div class="col-md-6">
-                                            <div class="form-group form-focus">
-                                                <label class="focus-label">Designation</label>
-                                                <input type="text" class="form-control floating" name="designation"  value="{{ $profile->designation }}" >
-                                            </div>
-                                        </div>
+                                         
                                        
                                     </div>
                                 </div>
@@ -92,7 +87,7 @@ Doctor Profile
                         <h3 class="card-title">Contact Informations</h3>
                         <div class="row">
                            
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <div class="form-group form-focus">
                                     <label class="focus-label">Phone Number</label>
                                     <input type="text" class="form-control floating" name="phone"  value="{{ $profile->phone }}">
@@ -104,7 +99,15 @@ Doctor Profile
                                     <label class="focus-label">Country</label>
                                     <input type="text" class="form-control floating" name="country"  value="{{ $profile->country }}">
                                 </div>
+                            </div> --}}
+
+                            <div class="col-md-6">
+                                <div class="form-group form-focus">
+                                    <label class="focus-label">Designation</label>
+                                    <input type="text" class="form-control floating" name="designation"  value="{{ $profile->designation }}" >
+                                </div>
                             </div>
+
                         </div>
                     </div>
                     

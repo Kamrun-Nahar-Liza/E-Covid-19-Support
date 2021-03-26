@@ -40,7 +40,7 @@ Doctor Profile
                                             <ul class="personal-info">
                                                 <li>
                                                     <span class="title">Phone:</span>
-                                                    <span class="text"><a href="#">{{ $data->phone }}</a></span>
+                                                    <span class="text"><a href="#">{{ $data->user->phone }}</a></span>
                                                 </li>
                                                 <li>
                                                     <span class="title">Email:</span>
@@ -52,7 +52,7 @@ Doctor Profile
                                                 </li>
                                                 <li>
                                                     <span class="title">Country:</span>
-                                                    <span class="text"><a href="#">{{ $data->country }}</a></span>
+                                                    <span class="text"><a href="#">{{ $data->user->country }}</a></span>
                                                 </li>
                                                 
                                             </ul>

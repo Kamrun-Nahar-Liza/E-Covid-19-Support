@@ -18,7 +18,7 @@ Doctor Profile Lists
                     <div class="col-sm-4 col-3">
                         <h4 class="page-title">Doctors</h4>
                     </div>
-                    @if( Auth::user()->role == "doctor")
+                    @if( Auth::user()->role == "doctor" && Auth::user()->is_doctor == "1")
                     <div class="col-sm-8 col-9 text-right m-b-20">
                         @php 
                             $profile = \App\Profile::where('user_id',auth()->id())->exists();
@@ -43,7 +43,7 @@ Doctor Profile Lists
 
                             <h4 class="doctor-name text-ellipsis"><a href="">{{ $profile->first_name }}{{ $profile->last_name }}</a></h4>
                             <div class="doc-prof">{{ $profile->department }}</div>
-                            <div class="doc-prof">{{ $profile->country }}</div>
+                            <div class="doc-prof">{{ $profile->user->country }}</div>
                             <div class="user-country">
                                 <i class="fa fa-map-marker"></i> {{ $profile->designation }}
                             </div>
