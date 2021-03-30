@@ -31,7 +31,7 @@ class CountryController extends Controller
 
         $rules= [
             'name' => 'required|unique:countries,name',
-            'code' => 'required|unique:countries,name'
+            'code' => 'required|unique:countries,code'
         ];
 
         $validator = Validator::make($request->all(), $rules);

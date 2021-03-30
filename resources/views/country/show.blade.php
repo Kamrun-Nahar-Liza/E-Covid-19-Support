@@ -73,7 +73,7 @@
 					<td>{{ $post->country->name }}</td>
 					<td>{{ $post->symptoms }}</td>
 					<td>{{ $post->title }}</td>
-					<td>{{ $post->content }}</td>   
+					<td>{!! htmlspecialchars_decode($post->content) !!}</td>   
 					<td>{{ $post->user->name }}</td>
 					<td>{{ $post->status == 1 ? 'Active' : 'Inactive' }}</td>
 					<td>

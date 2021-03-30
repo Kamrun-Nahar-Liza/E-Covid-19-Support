@@ -49,7 +49,7 @@
 						<a href="{{ route('plasmaposts.show', $plasmapost->id)}}" class="btn btn-info">
 							<i class="fa fa-external-link-square">  Details</i>
 						</a>						
-  					<td>
+					</td>
 				@endforeach
 			</tbody>
 		</table>

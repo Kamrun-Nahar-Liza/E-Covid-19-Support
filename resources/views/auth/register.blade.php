@@ -351,7 +351,7 @@
                             </div>  
                             
                             
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 liza" style="display: none">
                                 <div class="form-group">
                                     <input id="code" type="text"  class="form-control @error('code') is-invalid @enderror" name="code" value="{{ old('code') }}"  autocomplete="name" autofocus 
                                          placeholder="Registered Doctor Code" style="border-color: cadetblue">
@@ -562,6 +562,19 @@
 <script src="{{asset('HomePage/assets/js/popper.min.js')}}"></script>
 <script src="{{asset('HomePage/assets/js/script.js')}}"></script>
 
+<script>
+$(document).on('change','#role',function(){
+    //let id = $('#guardian_type').children("option:selected").val();
+    let role_id = $(this).val();
+   
+    if( role_id == "doctor"){
+        $('.liza').fadeIn();
+    }
+    else{
+        $('.liza').fadeOut();
+    }
+})
+</script>
 
 </body>
 
