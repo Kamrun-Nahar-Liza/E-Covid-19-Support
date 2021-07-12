@@ -23,8 +23,8 @@
 			<thead class="thead-dark">
 				<tr >
 				<th>Blood Group</th>
-        <th>Location</th>
-				<th>Contact</th>
+        {{-- <th>Location</th>
+				<th>Contact</th> --}}
 				<th>Message</th>
         <th>Send By</th>
 				<th>Request To</th>
@@ -38,8 +38,8 @@
             @foreach($plasmaprofile->plasmarequest as $plasmarequest)
             <tr>
               <td>{{ $plasmarequest->blood_group }}</td>
-              <td>{{ $plasmarequest->location }}</td>
-              <td>{{ $plasmarequest->phone }}</td>
+              {{-- <td>{{ $plasmarequest->location }}</td>
+              <td>{{ $plasmarequest->phone }}</td> --}}
               <td>{{ $plasmarequest->message }}</td>
               <td>{{ $plasmarequest->user->name }}</td>
               
@@ -55,7 +55,7 @@
                 @if($plasmarequest->status == 0)
                 <button class="btn btn-success btn-xs Accept" data-id="{{$plasmarequest->id}}">Accept</button>
                 @else
-                <button class="btn btn-danger btn-xs  Pending" data-id="{{$plasmarequest->id}}">Pending</button>                             
+                <button class="btn btn-danger btn-xs  Pending" data-id="{{$plasmarequest->id}}">Make Pending</button>                             
                  @endif
                             
               </td>

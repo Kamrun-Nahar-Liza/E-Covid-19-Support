@@ -14,7 +14,7 @@ class PlasmaRequestController extends Controller
     public function index()
     {
         $data=[];
-        $data['plasmarequests'] = PlasmaRequest::with('user')->select('id','user_id', 'plasma_profile_id', 'blood_group','location','phone','message','first_name','last_name','country','status')->get();
+        $data['plasmarequests'] = PlasmaRequest::with('user')->select('*')->get();
 
         return view('plasmarequest.index',$data);
     }

@@ -7,7 +7,6 @@
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b><h3>E- <span class="tc">Covid-19</span>Support</h3><b></span>
     </a>
-
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->

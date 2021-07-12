@@ -88,7 +88,7 @@ Plasma Profile
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card-box">
-                            <h3 class="card-title">Informations</h3>
+                            <h3 class="card-title">Location Informations</h3>
                             <div class="experience-box">
                                 <ul class="experience-list">
                                     <li>
@@ -97,8 +97,8 @@ Plasma Profile
                                         </div>
                                         <div class="experience-content">
                                             <div class="timeline-content">
-                                                <a href="#/" class="name">{{ $data->address }}</a>
-                                                <div>MBBS</div>
+                                                <a href="#/" class="name">{{ $data->area }}</a>
+                                                {{-- <div>MBBS</div> --}}
                                                 <!-- <span class="time">2001 - 2003</span> -->
                                             </div>
                                         </div>

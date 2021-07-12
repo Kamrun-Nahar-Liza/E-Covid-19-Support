@@ -24,7 +24,7 @@
 				<tr >
 				<th>Blood Group</th>
                 <th>Location</th>
-				<th>Contact</th>
+				{{-- <th>Contact</th> --}}
 				<th>Message</th>
 				<th>Request To</th>
 				<th>Status</th>
@@ -39,7 +39,7 @@
 				<tr>
                     <td>{{ $plasmarequest->blood_group }}</td>
 					<td>{{ $plasmarequest->location }}</td>
-					<td>{{ $plasmarequest->phone }}</td>
+					{{-- <td>{{ $plasmarequest->phone }}</td> --}}
                     <td>{{ $plasmarequest->message }}</td>
 					
 					   <!-- Post model relation name category,name can be on uour wish-->
@@ -54,7 +54,7 @@
 						@if($plasmarequest->status == 0)
 						<span class="label label-danger">Waiting for accept</span> 
 						@else
-						<a href="{{ route('donorinfo', $plasmarequest->id)}}" class="btn btn-info">
+						<a href="{{ route('donorinfo', $plasmarequest->plasma_profile_id)}}" class="btn btn-info">
 						<i class="fa fa-external-link-square">  Details</i>
 						</a>
 						@endif

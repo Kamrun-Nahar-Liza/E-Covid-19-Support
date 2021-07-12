@@ -34,7 +34,7 @@
 					<td>{{ $post->country->name }}</td>
 					<td>{{ $post->title }}</td>
                     <td>{{ $post->symptoms }}</td>
-					<td>{{ $post->content }}</td>
+					<td>{!! htmlspecialchars_decode($post->content) !!}</td>
 					   <!-- Post model relation name category,name can be on uour wish-->
 					<td>{{ $post->user->name }}</td>
 					<td>{{ $post->status == 1 ? 'Active' : 'Inactive' }}</td>

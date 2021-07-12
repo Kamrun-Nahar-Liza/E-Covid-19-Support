@@ -43,8 +43,21 @@
               <td>
                 @if($user->is_doctor == 0)
                 <button class="btn btn-success btn-xs Accept" data-id="{{$user->id}}">Accept</button>
+              <div style="padding-top: 4px">
+                <form action="{{ route('user.delete' , $user->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete?')">
+			
+                  {{ csrf_field() }}
+      
+                  <input name="_method" type="hidden" value="DELETE">
+                  <button type="submit" class="btn btn-danger btn-xs">
+                      Delete
+                  </button>
+      
+              </form> 
+              </div>
                 @else
-                <button class="btn btn-danger btn-xs  Pending" data-id="{{$user->id}}">Pending</button>
+                <button class="btn btn-warning btn-xs  Pending" data-id="{{$user->id}}">Pending</button>
+                <div style="padding-top: 4px">
                 <form action="{{ route('user.delete' , $user->id) }}" method="post" onsubmit="return confirm('Are you sure you want to delete?')">
 			
                     {{ csrf_field() }}
@@ -54,7 +67,8 @@
                         Delete
                     </button>
         
-                </form>                             
+                </form>   
+              </div>                          
                  @endif
                             
               </td>

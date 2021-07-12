@@ -36,7 +36,7 @@
       <select name="country_id" class="form-control">
         
             @foreach($countries->all() as $country)
-            <option value="{{ $country->id}}">{{ $country->name }}</option>
+            <option value="{{ $country->id}}" @if( $country->id = $plasmapost->country_name) Selected  @endif> {{ $country->name }}</option>
             @endforeach
         
       </select>  

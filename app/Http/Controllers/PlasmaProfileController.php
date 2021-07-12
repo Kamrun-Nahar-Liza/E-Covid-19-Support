@@ -152,7 +152,7 @@ class PlasmaProfileController extends Controller
 
     public function donorinfo($id)
     {
-        $data=[];
+        //$data=[];
         $data = PlasmaProfile::find($id);
         $plasmarequests= PlasmaRequest::find($id);
         return view('plasmaprofile.donorinfo', compact('data', 'plasmarequests'));

@@ -43,23 +43,24 @@
     </div>
 
     <div class="form-group">
-        <label for="country">Country</label>
+        <label for="country">Donor Country</label>
         <input type="text" class="form-control" name="country"  value="{{ $data->country }}" placeholder="Enter country ">
     </div>
   
     <div class="form-group">
-        <label for="location">Location</label>
+        <label for="location">Donor Location</label>
         <input type="text" class="form-control" name="location"  value="{{ $data->area }}" placeholder="Enter location ">
     </div>
 
    <div class="form-group">
-    <label for="phone">Phone</label>
+    <label for="phone">Your Phone No.</label>
     <input type="text" class="form-control" name="phone"  value="{{ Auth::user()->phone }}" placeholder="Enter phone "> 
     </div>
     
 
+
     <div class="form-group">
-        <label for="blood_group">Blood Group</label>
+        <label for="blood_group">Donor Blood Group</label>
           <select name="blood_group" class="form-control">
                 <option value="">--Choose Blood Group--</option>
                 <option value="A+" {{ $data->blood_group == 'A+' ? 'selected' : '' }}>A+</option>

@@ -43,7 +43,7 @@
                             <h2>{{ $post->country->name }}</h2> 
                             <h4><b>Title: {{ $post->title }}</b></h4>
                             <h5>Symptoms: {{ $post->symptoms }}</h5>  
-                            <h5>Instructions: {{ $post->content }}</h5>  
+                            <h5>Instructions: {!! htmlspecialchars_decode($post->content) !!}</h5>  
 
                             
                             <cite style="float: right;">Posted on:{{ $post->created_at }}</cite>

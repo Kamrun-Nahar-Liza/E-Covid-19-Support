@@ -50,7 +50,7 @@
 						<a href="{{ route('posts.show', $post->id)}}" class="btn btn-info">
 							<i class="fa fa-external-link-square">  Details</i>
 						</a>						
-  					<td>
+					</td>
 				@endforeach
 			</tbody>
 		</table>

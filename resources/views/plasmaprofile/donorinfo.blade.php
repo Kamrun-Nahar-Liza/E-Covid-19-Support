@@ -92,7 +92,7 @@ Plasma Profile
                                         <div class="experience-content">
                                             <div class="timeline-content">
                                                 <a href="#/" class="name">{{ $data->address }}</a>
-                                                <div>MBBS</div>
+                                                {{-- <div>MBBS</div> --}}
                                                 <!-- <span class="time">2001 - 2003</span> -->
                                             </div>
                                         </div>

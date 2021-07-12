@@ -145,8 +145,8 @@
                     <div class=" content">
                         <i class="ti-mobile"></i>
                         <div class="">
-                            <a href="tel:321125152"><b>(+001) 321-125-152</b></a>
-                            <br>
+                            {{-- <a href="tel:321125152"><b>(+001) 321-125-152</b></a>
+                            <br> --}}
                             <a href="mailto:contact@Prolexe.com"><b>e_covidsupport@gmail.com</b></a>
                         </div>
                     </div>
